@@ -1,0 +1,84 @@
+.grid-content__history:not(:last-child),
+.grid-content__block-container:not(:last-child),
+.grid-content__explicit-grid:not(:last-child),
+.grid-content__implicit-grid:not(:last-child),
+.grid-content__grid-alignment:not(:last-child),
+.grid-content__content-alignment:not(:last-child),
+.grid-content__tamplate-areas:not(:last-child),
+.grid-content__elements:not(:last-child) {
+   margin: 0px 0px 35px 0px;
+}
+
+.history__title,
+.layout__title,
+.container-block__title,
+.elements-grid__title {
+   margin: 0px 0px 25px 0px;
+}
+
+.container-block__subtitle:not(:last-child),
+.grid-explicit__subtitle:not(:last-child),
+.grid-explicit__subtitle:not(:last-child),
+.grid-implicit__subtitle:not(:last-child),
+.alignment-grid__subtitle:not(:last-child),
+.alignment-content__subtitle:not(:last-child),
+.areas-tamplate__subtitle:not(:last-child),
+.elements-grid__subtitle:not(:last-child) {
+   margin: 0px 0px 10px 0px;
+}
+
+.grid-explicit__layout:not(:last-child),
+.container-block__layout:not(:last-child),
+.grid-implicit__layout:not(:last-child),
+.alignment-grid__layout:not(:last-child),
+.alignment-content__layout:not(:last-child),
+.areas-tamplate__layout:not(:last-child),
+.elements-grid__layout:not(:last-child) {
+   margin: 0px 0px 25px 0px;
+}
+
+.container-block__text:not(:last-child),
+.grid-explicit__text:not(:last-child),
+.grid-implicit__text:not(:last-child),
+.alignment-grid__text:not(:last-child),
+.alignment-content__text:not(:last-child),
+.areas-tamplate__text:not(:last-child),
+.elements-grid__text:not(:last-child) {
+   margin: 0px 0px 10px 0px;
+}
+
+.title {
+   font-size: 25px;
+   font-weight: 700;
+}
+.subtitle {
+   font-size: 20px;
+   font-weight: 700;
+}
+.text {
+   text-align: justify;
+   line-height: 1.25;
+   text-indent: 20px;
+}
+span {
+   font-weight: 700;
+   background-color: #fff;
+   border-radius: 5px;
+   padding: 0px 5px;
+   white-space: nowrap;
+}
+
+/*============ layout =====================*/
+
+.layout {
+   display: grid;
+   background-color: #fff;
+   gap: 5px;
+   padding: 10px;
+}
+.layout__item {
+   font-size: 18px;
+   border: 2px solid #000;
+   background-color: aqua;
+   padding: 5px;
+}

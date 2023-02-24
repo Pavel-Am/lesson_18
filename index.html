@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/common.css">
+      <link rel="stylesheet" href="css/style.css">
+      <title>Lesson_18</title>
+   </head>
+
+   <body>
+      <div class="wrapper">
+         <header class="header"></header>
+         <main class="page">
+            <div class="page__grid grid-page">
+               <div class="grid-page__container">
+                     <nav class="grid-page__menu menu">
+                        <ol class="menu__list">
+                           <li class="menu__item">
+                              <a class="menu__link" href="#general">Общие сведения</a>
+                           </li>
+                           <li class="menu__item">
+                              <a class="menu__link" href="#container-block">Свойства для контейнера</a>
+                              <ul class="menu__sublist">
+                                 <li class="menu__subitem">
+                                    <a class="menu__sublink" href="#display">display</a>
+                                 </li>
+                                 <li class="menu__subitem">
+                                    <a class="menu__sublink" href="#grid-explicit">grid-template-columns <br> grid-template-rows</a>
+                                 </li>
+                                 <li class="menu__subitem">
+                                    <a class="menu__sublink" href="#grid-implicit">grid-auto-flow <br> grid-auto-columns <br> grid-auto-rows</a>
+                                 </li>
+                                 <li class="menu__subitem">
+                                    <a class="menu__sublink" href="#alignment-grid">justify-content <br> align-content <br> place-content</a>
+                                 </li>
+                                 <li class="menu__subitem">
+                                    <a class="menu__sublink" href="#alignment-content">justify-items <br> align-items <br> place-items</a>
+                                 </li>
+                                 <li class="menu__subitem">
+                                    <a class="menu__sublink" href="#areas-tamplate">grid-template-areas</a>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li class="menu__item">
+                              <a class="menu__link" href="#elements-grid">Свойства для элементов</a>
+                              <ul class="menu__sublist">
+                                 <li class="menu__subitem">
+                                    <a class="menu__sublink" href="#grid-column-start">grid-column-start <br> grid-column-end <br> grid-row-start <br> grid-row-end</a>
+                                 </li>
+                                 <li class="menu__subitem">
+                                    <a class="menu__sublink" href="#order">order</a>
+                                 </li>
+                                 <li class="menu__subitem">
+                                    <a class="menu__sublink" href="#self">justify-self <br> align-self <br> place-self</a>
+                                 </li>
+                                 <li class="menu__subitem">
+                                    <a class="menu__sublink" href="#Figma">Figma</a>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ol>
+                     </nav>
+                     <div class="grid-page__content grid-content">
+                        <div id="general" class="grid-content__history history">
+                           <h2 class="history__title title">Общие сведения</h2>
+                           <p class="history__text text">
+                              CSS Grid – это техника в каскадных таблицах стилей, позволяющая веб-разработчикам создавать сложные адаптивные макеты веб-дизайна более легко и последовательно в различных браузерах. Есть и другие методы макета вебстраниц, которые использовались ранее, включая tables, CSS Box model и CSS Flexbox.
+                           </p>
+                           <p class="history__text text">
+                              CSS Grid – это модель шаблона, оптимизированная для двумерных шаблонов. Используется в качестве модели шаблонов вебсайтов, форм, галерей и всего, что требует точного и внимательного позиционирования. Сети CSS – это новый подход к созданию адаптивных сайтов с большим количеством блоков, расположенных в любых местах сайта. Кроме CSS Grid существует также технология Flexbox, которая очень схожа с CSS Grid.
+                           </p>
+                           <p class="history__text text">
+                              Grid модуль в CSS был разработан CSS Working Group для того, чтобы предоставить лучший способ создания шаблонов в CSS. Он попал в W3C Candidate Recommendation в феврале 2017 года, а основные браузеры начали его поддержку в марте 2017 года. Используется для разработки front-end. Данная технология обладает мощным функционалом и интуитивно понятным синтаксисом, а шаблоны на grid несомненно будут изменять то, на чем создается Web.
+                           </p>
+                           <p class="history__text text">
+                              CSS Grid можно назвать улучшенной версией Flexbox, ведь Flexbox позволяет работать только в одной плоскости: либо создавать столбцы, либо создавать строчки. CSS Grid позволяет производить больше, так как данная технология работает в обеих плоскостях одновременно. Таким образом создание адаптивных блоков сайта происходит проще, а возможности для расположения объектов увеличиваются.
+                           </p>
+                           <p class="history__text text">
+                              По состоянию на февраль 2023 года большинство браузеров поставляли беспрефиксную поддержку CSS Grid 96.36%: Chrome (включая Android), Firefox, Safari (включая iOS) и Opera. Internet Explorer 10 и 11, с другой стороны, поддерживают его старую реализацию с устаревшим синтаксисом. Все современные браузеры для мобильных устройств поддерживают CSS Grid кроме браузеров Opera mini.
+                           </p>
+                           <div class="history__image">
+                              <img src="img/02.jpg" alt="support">
+                           </div>
+                        </div>
+   
+                        <div id="container-block" class="grid-content__block-container container-block">
+                           <h2 class="container-block__title title">Свойства для контейнера</h2>
+                           <h3 id="display" class="container-block__subtitle subtitle">display</h3>
+                           <p class="container-block__text text">
+                              Свойство <span>display</span> является наиболее важным свойством CSS для управления макетом. Это свойство задаётся для объекта, который мы хотим сделать контейнером. Контейнер-сетка бывает двух видов: обычный <span>display: grid</span> и встроенный <span>display: inline-grid</span>.
+                           </p>
+                           <p class="container-block__text text">
+                              Первый генерирует grid-контейнер уровня блока:
+                           </p>
+                           <div class="container-block__layout layout">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                           </div>
+                           <p class="container-block__text text">
+                              Второй — grid-контейнер уровня строки:
+                           </p>
+                           <div class="container-block__layout layout layout--inline-grid">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                           </div>
+                        </div>
+   
+                        <div id="grid-explicit" class="grid-content__explicit-grid grid-explicit">
+                           <h3 class="grid-explicit__subtitle subtitle">grid-template-columns <br> grid-template-rows</h3>
+                           <p class="grid-explicit__text text">
+                              Явная сетка в гридах формируется из колнок и рядов для которых заданны конкретные размеры. Для формирования колонок мы используем свойство <span>grid-template-columns</span>, а для формирования рядов - свойство <span>grid-template-rows</span>. В значении свойств <span>grid-template-columns</span> нам необходимо указывать сразу ширины колонок через пробел и сколько мы ширин укажем столько колонок явной сетки у нас и будет.
+                           </p>
+                           <div class="grid-explicit__layout layout layout--columns">
+                              <div class="layout__item">ширина 200px</div>
+                              <div class="layout__item">ширина 200px</div>
+                              <div class="layout__item">ширина 200px</div>
+                              <div class="layout__item">ширина 200px</div>
+                              <div class="layout__item">ширина 200px</div>
+                              <div class="layout__item">ширина 200px</div>
+                           </div>
+                           <p class="grid-explicit__text text">
+                              Для того, чтобы построить трех-колоночную систему необходимо для свойства <span>grid-template-columns</span> задавать не фиксированные или процентные значения, а отдельное значение, выведенное специально для грид - <span>fr</span>. Которое означает, что колонка, для которой задали значение в <span>fr</span> будет стремиться занять все свободное пространство. Таким образом задавая трем колонкам значение в <span>1fr</span> все три колонки будут стремиться занять все свободное пространство тем самым формируя одинаковые по ширине колонки.
+                           </p>
+                           <div class="grid-explicit__layout layout layout--fr">
+                              <div class="layout__item">ширина 1fr</div>
+                              <div class="layout__item">ширина 1fr</div>
+                              <div class="layout__item">ширина 1fr</div>
+                              <div class="layout__item">ширина 1fr</div>
+                              <div class="layout__item">ширина 1fr</div>
+                              <div class="layout__item">ширина 1fr</div>
+                           </div>
+                           <p class="grid-explicit__text text">
+                              Что касается свойства <span>grid-template-rows</span>, то для него задаются значения по такому же принципу с одним лишь отличаем в том, что для рядов задается не ширина, а высота. Ряды, высота которых не была указана в свойстве grid-template-rows формируют уже не явную сетку, которую можно регулировать другими свойствами.
+                           </p>
+                           <p class="grid-explicit__text text">
+                              Существует универсальная запись этих свойств и выглядит она так: <span>grid-template: grid-template-rows / grid-template-columns;</span> где через перечисляются значения свойств, сначала для рядов, а через слэш для колонок.
+                           </p>
+                           <div class="grid-explicit__layout layout layout--row">
+                              <div class="layout__item">высота 100px</div>
+                              <div class="layout__item">высота 100px</div>
+                              <div class="layout__item">высота 100px</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">blocl_5</div>
+                              <div class="layout__item">blocl_6</div>
+                           </div>
+                           <p class="grid-explicit__text text">
+                              Так же к вышеуказанным свойствам применяются следующие значения: <span>auto-fill</span> – будет выстраивать в ряд все ячейки пока они будут помещаться со своими автоматическими размерами, но на больших размерах вьюпорта будет создавать дополнительные пустые ячейки в ряду. <span>auto-fit</span> – будет выстраивать в ряд все ячейки пока они будут помещаться со своими автоматическими размерами, но на больших размерах вьюпорта не будет создавать дополнительные пустые ячейки в ряду, а будет увеличивать существующие. <span>minmax</span> (280px,1fr) – указывается минимальное и максимальное значение объекта через запятую в круглых скобках. 
+                           </p>
+                        </div>
+   
+                        <div id="grid-implicit" class="grid-content__implicit-grid grid-implicit">
+                           <h3 class="grid-implicit__subtitle subtitle">grid-auto-flow <br> grid-auto-columns <br> grid-auto-rows</h3>
+                           <p class="grid-implicit__text text">
+                              Для того, чтобы регулировать неявную сетку используют свойства <span>grid-auto-flow</span>, <span>grid-auto-columns</span>, <span>grid-auto-rows</span>. У каждого из них свое назначение. <span>grid-auto-flow</span> - отвечает за то, как будут отстраиваться grid-элементы не явной сетки. И имеет ряд своих свойств: <span>row</span> - по умолчанию лишние объекты будут начинаться с нового ряда.
+                           </p>
+                           <div class="grid-implicit__layout layout layout--flow-row">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                           </div>
+                           <p class="grid-implicit__text text">
+                              При значении <span>column</span> - объекты будут стремиться формировать дополнительные колонки даже, если мы их не указывали в явной сетке при условии, что не указанно количество рядов. Если указанно количество рядов, то сначала будет идти заполнение указанных радов (указанной явной сетки). Алгоритм размещает элементы, заполняя каждый столбец по очереди сверху-вниз, добавляя новые столбцы по мере необходимости.
+                           </p>
+                           <div class="grid-implicit__layout layout layout--flow-column">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="grid-implicit__text text">
+                              При значении <span>dense</span> - для плотного (без пробелов) заполнения пустот. Заполняет в произвольном порядке пустоты так, как по мнению алгоритма данной функции будет наиболее правильно (по факту заполняет все “от фонаря”). Алгоритм "плотной" укладки элементов. При необходимости может менять порядок следования элементов, заполняя пустые места более крупными элементами.
+                           </p>
+                           <div class="grid-implicit__layout layout layout--flow-dense">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="grid-implicit__text text">
+                              По умолчанию эти автоматически добавляемые дорожки имеют минимальный необходимый размер. Свойства <span>grid-auto-column</span> позволяют контролировать размер неявных дорожек сетки. Если дано несколько размеров дорожек, шаблон повторяется по мере необходимости, чтобы найти размер неявных дорожек. Первая неявная дорожка сетки после явной сетки получает первый заданный размер и так далее. Свойства не наследуются.
+                           </p>
+                           <div class="grid-implicit__layout layout layout--auto-column">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                           </div>
+                           <p class="grid-implicit__text text">
+                              По умолчанию эти автоматически добавляемые дорожки имеют минимальный необходимый размер. Свойства <span>grid-auto-rows</span> позволяют контролировать размер неявных дорожек сетки. Если дано несколько размеров дорожек, шаблон повторяется по мере необходимости, чтобы найти размер неявных дорожек. Первая неявная дорожка сетки после явной сетки получает первый заданный размер и так далее. Свойства не наследуются.
+                           </p>
+                           <div class="grid-implicit__layout layout layout--auto-rows">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                           </div>
+                        </div>
+   
+                        <div id="alignment-grid" class="grid-content__grid-alignment alignment-grid">
+                           <h3 class="alignment-grid__subtitle subtitle">justify-content <br> align-content <br> place-content</h3>
+                           <p class="alignment-grid__text text">
+                              Свойство <span>justify-content</span> выравнивает сетку вдоль горизонтальной оси. Свойство не наследуются. Значение <span>start</span> - по умолчанию. Выравнивает сетку по левой стороне контейнера.
+                           </p>
+                           <div class="alignment-grid__layout layout layout--justify-start">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-grid__text text">
+                              Значение <span>end</span> - выравнивает сетку по правой стороне контейнера.
+                           </p>
+                           <div class="alignment-grid__layout layout layout--justify-end">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-grid__text text">
+                              Значение <span>center</span> - выравнивает сетку по центру контейнера.
+                           </p>
+                           <div class="alignment-grid__layout layout layout--justify-center">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-grid__text text">
+                              Значение <span>stretch</span> - масштабирует элементы чтобы сетка могла заполнять всю ширину контейнера.
+                           </p>
+                           <div class="alignment-grid__layout layout layout--justify-stretch">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-grid__text text">
+                              Значение <span>space-around</span> - одинаковое пространство между элементами и полу размерные отступы по краям.
+                           </p>
+                           <div class="alignment-grid__layout layout layout--justify-space-around">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-grid__text text">
+                              Значение <span>space-between</span> - одинаковое пространство между элементами и без отступа по краям.
+                           </p>
+                           <div class="alignment-grid__layout layout layout--justify-space-between">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-grid__text text">
+                              Значение <span>space-evenly</span> - одинаковое пространство между элементами и полноразмерные отступы по краям.
+                           </p>
+                           <div class="alignment-grid__layout layout layout--justify-space-evenly">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+   
+                           <p class="alignment-grid__text text">
+                              Свойство <span>align-content</span> выравнивает сетку вдоль вертикальной оси. Свойство не наследуются. Значение <span>start</span> - по умолчанию. Выравнивает сетку по верхней стороне контейнера.
+                           </p>
+                           <div class="alignment-grid__layout layout layout--align-start">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-grid__text text">
+                              Значение <span>end</span> - выравнивает сетку по нижней стороне контейнера.
+                           </p>
+                           <div class="alignment-grid__layout layout layout--align-end">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-grid__text text">
+                              Значение <span>center</span> - выравнивает сетку по центру контейнера.
+                           </p>
+                           <div class="alignment-grid__layout layout layout--align-center">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-grid__text text">
+                              Значение <span>stretch</span> - масштабирует элементы чтобы сетка могла заполнять всю высоту контейнера.
+                           </p>
+                           <div class="alignment-grid__layout layout layout--align-stretch">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-grid__text text">
+                              Значение <span>space-around</span> - одинаковое пространство между элементами и полу размерные отступы сверху и снизу.
+                           </p>
+                           <div class="alignment-grid__layout layout layout--align-space-around">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-grid__text text">
+                              Значение <span>space-between</span> - одинаковое пространство между элементами и без отступа по краям.
+                           </p>
+                           <div class="alignment-grid__layout layout layout--align-space-between">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-grid__text text">
+                              Значение <span>space-evenly</span> - одинаковое пространство между элементами и полноразмерные отступы сверху и снизу.
+                           </p>
+                           <div class="alignment-grid__layout layout layout--align-space-evenly">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-grid__text text">
+                              Свойство <span>place-content</span> - является короткой записью для свойств <span>justify-content</span> и <span>align-content</span>, свойствами которого являются значения сначала для горизонтального выравнивания (justify-content), а следующее для вертикального выравнивания (align-content) записанные через слэш (/) и выглядит так: <span>place-content: center / center;</span> - выравняет сетку по центру контейнера.
+                           </p>
+                        </div>
+   
+                        <div id="alignment-content" class="grid-content__content-alignment alignment-content">
+                           <h3 class="alignment-content__subtitle subtitle">justify-items <br> align-items <br> place-items</h3>
+                           <p class="alignment-content__text text">
+                              Свойство <span>justify-items</span> выравнивает содержимое вдоль горизонтальной оси. Это значение применяется ко всем элементам сетки внутри контейнера. Свойство не наследуются. Значение <span>stretch</span> - по умолчанию. Растягивает контент в ячейках на всю её ширину.
+                           </p>
+                           <div class="alignment-content__layout layout layout--stretch-justify">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-content__text text">
+                              Значение <span>start</span> - прижимает содержимое ячейки к её началу (левому краю).
+                           </p>
+                           <div class="alignment-content__layout layout layout--start-justify">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-content__text text">
+                              Значение <span>end</span> - прижимает содержимое ячейки к её концу (правому краю).
+                           </p>
+                           <div class="alignment-content__layout layout layout--end-justify">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-content__text text">
+                              Значение <span>center</span> - располагает содержимое по центру ячейки.
+                           </p>
+                           <div class="alignment-content__layout layout layout--center-justify">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+   
+                           <p class="alignment-content__text text">
+                              Свойство <span>align-items</span> Выравнивает содержимое вдоль вертикальной оси. Это значение применяется ко всем элементам сетки внутри контейнера. Свойство не наследуются. Значение <span>stretch</span> - по умолчанию. Растягивает контент в ячейках на всю её высоту.
+                           </p>
+                           <div class="alignment-content__layout layout layout--stretch-align">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-content__text text">
+                              Значение <span>start</span> - прижимает содержимое ячейки к её началу (верхней части).
+                           </p>
+                           <div class="alignment-content__layout layout layout--start-align">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-content__text text">
+                              Значение <span>end</span> - прижимает содержимое ячейки к её концу (нижней части).
+                           </p>
+                           <div class="alignment-content__layout layout layout--end-align">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-content__text text">
+                              Значение <span>center</span> - располагает содержимое по центру ячейки.
+                           </p>
+                           <div class="alignment-content__layout layout layout--center-align">
+                              <div class="layout__item">block_1</div>
+                              <div class="layout__item">block_2</div>
+                              <div class="layout__item">block_3</div>
+                              <div class="layout__item">block_4</div>
+                              <div class="layout__item">block_5</div>
+                              <div class="layout__item">block_6</div>
+                              <div class="layout__item">block_7</div>
+                              <div class="layout__item">block_8</div>
+                              <div class="layout__item">block_9</div>
+                              <div class="layout__item">block_10</div>
+                              <div class="layout__item">block_11</div>
+                              <div class="layout__item">block_12</div>
+                           </div>
+                           <p class="alignment-content__text text">
+                              Свойство <span>place-items</span> - является короткой записью для свойств <span>justify-items</span> и <span>align-items</span>, свойствами которого являются значения сначала для горизонтального выравнивания (justify-items), а следующее для вертикального выравнивания (align-items) записанные через слэш (/) и выглядит так: <span>place-items: center / center;</span> - выравняет контент по центру ячейки.
+                           </p>
+                        </div>
+   
+                        <div id="areas-tamplate" class="grid-content__tamplate-areas areas-tamplate">
+                           <h3 class="areas-tamplate__subtitle subtitle">grid-template-areas</h3>
+                           <p class="areas-tamplate__text text">
+                              <span>grid-template-areas</span> - определяет шаблон сетки ссылаяся на имена областей, которые заданы с помощью свойства <span>grid-area</span> для дочернего грид-элемента. Повторение названия области приводит к тому, что содержиоме охватывает эти ячейки. Точка означает пустую ячейку. Сам синтаксис предоставляет визуализацию структуры сетки. Таким образом можно формировать различные конструкции.
+                           </p>
+                           <div class="areas-tamplate__layout layout layout--at">
+                              <div class="layout__item layout__item--b-1">block_1</div>
+                              <div class="layout__item layout__item--b-2">block_2</div>
+                              <div class="layout__item layout__item--b-3">block_3</div>
+                              <div class="layout__item layout__item--b-4">block_4</div>
+                              <div class="layout__item layout__item--b-5">block_5</div>
+                           </div>
+                        </div>
+   
+                        <div id="elements-grid" class="grid-content__elements elements-grid">
+                           <h2 class="elements-grid__title title">Свойства для элементов</h2>
+                           <h3 id="grid-column-start" class="elements-grid__subtitle subtitle">grid-column-start <br> grid-column-end <br> grid-row-start <br> grid-row-end</h3>
+                           <p class="elements-grid__text text">
+                              Определяют местоположение в сетке ссылаясь на конкретные линии. <span>grid-column-start</span> / <span>grid-row-start</span> - это линия с которой начинается элемент, а <span>grid-column-end</span> / <span>grid-row-end</span> - это линия на которой элемент заканчивается. Короткая запись для колонок: <span>grid-column: start / end;</span> а для рядов соответственно: <span>grid-row: start / end;</span> - где через / записуется значения начала (start) и конца (end) ячейки. Значение <span>span</span> указывает на какое количество ячеек растянется данная ячейка. Применяется как для ширины, так и для высоты ячейки.
+                           </p>
+                           <div class="elements-grid__layout layout layout--start-end">
+                              <div class="layout__item layout__item--se-1">block_1</div>
+                              <div class="layout__item layout__item--se-2">block_2</div>
+                              <div class="layout__item layout__item--se-3">block_3</div>
+                              <div class="layout__item layout__item--se-4">block_4</div>
+                              <div class="layout__item layout__item--se-5">block_5</div>
+                              <div class="layout__item layout__item--se-6">block_6</div>
+                              <div class="layout__item layout__item--se-7">block_7</div>
+                              <div class="layout__item layout__item--se-8">block_8</div>
+                              <div class="layout__item layout__item--se-9">block_9</div>
+                              <div class="layout__item layout__item--se-10">block_10</div>
+                              <div class="layout__item layout__item--se-11">block_11</div>
+                              <div class="layout__item layout__item--se-12">block_12</div>
+                              <div class="layout__item layout__item--se-13">block_13</div>
+                              <div class="layout__item layout__item--se-14">block_14</div>
+                              <div class="layout__item layout__item--se-15">block_15</div>
+                              <div class="layout__item layout__item--se-16">block_16</div>
+                           </div>
+                           <h3 id="order" class="elements-grid__subtitle subtitle">order</h3>
+                           <p class="elements-grid__text text">
+                              Свойство <span>order</span> можно использовать для указания порядка, в котором различные элементы должны быть размещены внутри сетки. По умолчанию элементы размещаются в том порядке, в котором они появляются в DOM. Например, если элемент A находится выше элемента B в фактическом исходном документе, он также будет помещен в сетку перед элементом B. В зависимости от вашего проекта это может быть или не быть желаемым поведением.
+                           </p>
+                           <p class="elements-grid__text text">
+                              Это orderсвойство может быть очень полезным, особенно когда элементов много или элементы добавляются динамически. В таких случаях, если вы хотите, чтобы элемент всегда помещался в конец сетки, вы можете легко сделать это с помощью свойства order.
+                           </p>
+                           <p class="elements-grid__text text">
+                              Элементы с наименьшей стоимостью заказа размещаются в сетке первыми. Элементы с более высокими значениями размещаются позже. Элементы с одинаковым значением порядка будут размещены в том порядке, в котором они появляются в исходном документе.
+                           </p>
+                           <div class="elements-grid__layout layout layout--order">
+                              <div class="layout__item layout__item--order-1">block_1</div>
+                              <div class="layout__item layout__item--order-2">block_2</div>
+                              <div class="layout__item layout__item--order-3">block_3</div>
+                              <div class="layout__item layout__item--order-4">block_4</div>
+                              <div class="layout__item layout__item--order-5">block_5</div>
+                              <div class="layout__item layout__item--order-6">block_6</div>
+                              <div class="layout__item layout__item--order-7">block_7</div>
+                              <div class="layout__item layout__item--order-8">block_8</div>
+                              <div class="layout__item layout__item--order-9">block_9</div>
+                           </div>
+                           <h3 id="self" class="elements-grid__subtitle subtitle">justify-self <br> align-self <br> place-self</h3>
+                           <p class="elements-grid__text text">
+                              Свойство <span>justify-self</span> - выравнивает содержимое отдельного элемента вдоль горизонтальной оси. Свойство <span>align-self</span> - выравнивает содержимое элемента вдоль вертикальной оси. Свойство <span>place-self</span>- выравнивает текущий элемент внутри ячейки по двум осям сразу. Эти значение применяются к содержимому внутри отдельного элемента.
+                           </p>
+                           <div class="elements-grid__layout layout layout--element">
+                              <div class="layout__item layout__item--element-1">block_1</div>
+                              <div class="layout__item layout__item--element-2">block_2</div>
+                              <div class="layout__item layout__item--element-3">block_3</div>
+                              <div class="layout__item layout__item--element-4">block_4</div>
+                              <div class="layout__item layout__item--element-5">block_5</div>
+                              <div class="layout__item layout__item--element-6">block_6</div>
+                              <div class="layout__item layout__item--element-7">block_7</div>
+                              <div class="layout__item layout__item--element-8">block_8</div>
+                              <div class="layout__item layout__item--element-9">block_9</div>
+                           </div>
+                        </div>
+                        <div id="Figma" class="grid-content__figma">
+                           <a href="figma.html" class="grid-content__link">Figma</a>
+                        </div>
+                     </div>
+               </div>
+            </div>
+         </main>
+         <footer class="footer"></footer>
+      </div>
+   </body>
+
+</html>
