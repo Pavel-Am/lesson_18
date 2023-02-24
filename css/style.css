@@ -116,6 +116,14 @@ body {
       margin-left: 220px;
    }
 }
+@media (max-width: 767.98px){
+   .grid-page__menu {
+      display: none;
+   }
+   .grid-page__content {
+      margin-left: 0;
+   }
+}
 
 /*================ history ========================*/
 
