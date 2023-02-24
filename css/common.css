@@ -68,6 +68,47 @@ span {
    white-space: nowrap;
 }
 
+
+@media (max-width: 465px){
+   .grid-content__history:not(:last-child),
+   .grid-content__block-container:not(:last-child),
+   .grid-content__explicit-grid:not(:last-child),
+   .grid-content__implicit-grid:not(:last-child),
+   .grid-content__grid-alignment:not(:last-child),
+   .grid-content__content-alignment:not(:last-child),
+   .grid-content__tamplate-areas:not(:last-child),
+   .grid-content__elements:not(:last-child) {
+      margin: 0px 0px 20px 0px;
+   }
+   .history__title,
+   .layout__title,
+   .container-block__title,
+   .elements-grid__title {
+      margin: 0px 0px 15px 0px;
+   }
+   .grid-explicit__layout:not(:last-child),
+   .container-block__layout:not(:last-child),
+   .grid-implicit__layout:not(:last-child),
+   .alignment-grid__layout:not(:last-child),
+   .alignment-content__layout:not(:last-child),
+   .areas-tamplate__layout:not(:last-child),
+   .elements-grid__layout:not(:last-child) {
+      margin: 0px 0px 15px 0px;
+   }
+   .subtitle {
+      font-size: 18px;
+      font-weight: 700;
+   }
+   .title {
+      font-size: 20px;
+   }
+   .text {
+      text-align: justify;
+      line-height: 1.4;
+      text-indent: 10px;
+   }
+}
+
 /*============ layout =====================*/
 
 .layout {
@@ -81,4 +122,11 @@ span {
    border: 2px solid #000;
    background-color: aqua;
    padding: 5px;
+}
+
+
+@media (max-width: 465px){
+   .layout__item {
+      font-size: 14px;
+   }
 }

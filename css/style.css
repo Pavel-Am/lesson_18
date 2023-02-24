@@ -46,6 +46,12 @@ body {
    margin: 0 auto;
 }
 
+@media (max-width: 465px){
+   body {
+      font-size: 14px;
+   }
+}
+
 /*======================= menu =====================================*/
 
 .page {}
@@ -149,8 +155,7 @@ body {
 /*============ grid-explicit ===================*/
 
 .layout--columns {
-   grid-template-columns: minmax(130px,200px) minmax(130px,200px) minmax(130px,200px);
-   margin: 0px 0px 25px 0px;
+   grid-template-columns: minmax(80px,200px) minmax(80px,200px) minmax(80px,200px);
 }
 .layout--fr {
    grid-template-columns: 1fr 1fr 1fr;
@@ -166,11 +171,11 @@ body {
    grid-auto-flow: column;
 }
 .layout--flow-dense {
-   grid-template: 50px 50px / repeat(3, minmax(130px, 200px));
+   grid-template: 50px 50px / repeat(3, minmax(70px, 200px));
    grid-auto-flow: dense;
 }
 .layout--auto-rows {
-   grid-template: 1fr / repeat(3, minmax(130px, 200px));
+   grid-template: 1fr / repeat(3, minmax(70px, 200px));
    grid-auto-rows: 100px;
 }
 .layout--auto-column {
@@ -180,31 +185,31 @@ body {
 /*============= alignment-grid ===================*/
 
 .layout--justify-start {
-   grid-template: repeat(3,50px) / repeat(4, minmax(100px, 150px));
+   grid-template: repeat(3,50px) / repeat(3, minmax(100px, 150px));
    justify-content: start;
 }
 .layout--justify-end {
-   grid-template: repeat(3, 50px) / repeat(4, minmax(100px, 150px));
+   grid-template: repeat(3, 50px) / repeat(3, minmax(100px, 150px));
    justify-content: end;
 }
 .layout--justify-center {
-   grid-template: repeat(3, 50px) / repeat(4, minmax(100px, 150px));
+   grid-template: repeat(3, 50px) / repeat(3, minmax(100px, 150px));
    justify-content: center;
 }
 .layout--justify-stretch {
-   grid-template: repeat(3, 50px) / repeat(4, minmax(100px, 150px));
+   grid-template: repeat(3, 50px) / repeat(3, minmax(100px, 150px));
    justify-content: stretch;
 }
 .layout--justify-space-around {
-   grid-template: repeat(3, 50px) / repeat(4, minmax(100px, 150px));
+   grid-template: repeat(3, 50px) / repeat(3, minmax(100px, 150px));
    justify-content: space-around;
 }
 .layout--justify-space-between {
-   grid-template: repeat(3, 50px) / repeat(4, minmax(100px, 150px));
+   grid-template: repeat(3, 50px) / repeat(3, minmax(100px, 150px));
    justify-content: space-between;
 }
 .layout--justify-space-evenly {
-   grid-template: repeat(3, 50px) / repeat(4, minmax(100px, 150px));
+   grid-template: repeat(3, 50px) / repeat(3, minmax(100px, 150px));
    justify-content: space-evenly;
 }
 
@@ -216,44 +221,55 @@ body {
    .layout--justify-space-around,
    .layout--justify-space-between,
    .layout--justify-space-evenly {
-      grid-template: repeat(3, 50px) / repeat(4, minmax(70px, 90px));
+      grid-template: repeat(3, 50px) / repeat(3, minmax(70px, 90px));
+   }
+}
+@media (max-width: 465px) {
+   .layout--justify-start,
+   .layout--justify-end,
+   .layout--justify-center,
+   .layout--justify-stretch,
+   .layout--justify-space-around,
+   .layout--justify-space-between,
+   .layout--justify-space-evenly {
+      grid-template: repeat(3, 1fr) / repeat(3, 60px);
    }
 }
 /*==============================*/
 
 .layout--align-start {
    height: 350px;
-   grid-template: repeat(3, 50px) / repeat(4, minmax(100px, 150px));
+   grid-template: repeat(3, 50px) / repeat(3, minmax(100px, 150px));
    align-content: start;
 }
 .layout--align-end {
    height: 350px;
-   grid-template: repeat(3, 50px) / repeat(4, minmax(100px, 150px));
+   grid-template: repeat(3, 50px) / repeat(3, minmax(100px, 150px));
    align-content: end;
 }
 .layout--align-center {
    height: 350px;
-   grid-template: repeat(3, 50px) / repeat(4, minmax(100px, 150px));
+   grid-template: repeat(3, 50px) / repeat(3, minmax(100px, 150px));
    align-content: center;
 }
 .layout--align-stretch {
    height: 350px;
-   grid-template: repeat(3, 50px) / repeat(4, minmax(100px, 150px));
+   grid-template: repeat(3, 50px) / repeat(3, minmax(100px, 150px));
    align-content: stretch;
 }
 .layout--align-space-around {
    height: 350px;
-   grid-template: repeat(3, 50px) / repeat(4, minmax(100px, 150px));
+   grid-template: repeat(3, 50px) / repeat(3, minmax(100px, 150px));
    align-content: space-around;
 }
 .layout--align-space-between {
    height: 350px;
-   grid-template: repeat(3, 50px) / repeat(4, minmax(100px, 150px));
+   grid-template: repeat(3, 50px) / repeat(3, minmax(100px, 150px));
    align-content: space-between;
 }
 .layout--align-space-evenly {
    height: 350px;
-   grid-template: repeat(3, 50px) / repeat(4, minmax(100px, 150px));
+   grid-template: repeat(3, 50px) / repeat(3, minmax(100px, 150px));
    align-content: space-evenly;
 }
 
@@ -269,55 +285,7 @@ body {
       grid-template: repeat(3, 50px) / repeat(4, minmax(70px, 100px));
    }
 }
-/*============= alignment-content ===================*/
-
-.layout--stretch-justify {
-   grid-template: repeat(3, 80px) / repeat(4, 1fr);
-   /* justify-items: stretch; */
-}
-.layout--start-justify {
-   grid-template: repeat(3, 80px) / repeat(4, 1fr);
-   justify-items: start;
-}
-.layout--end-justify {
-   grid-template: repeat(3, 80px) / repeat(4, 1fr);
-   justify-items: end;
-}
-.layout--center-justify {
-   grid-template: repeat(3, 80px) / repeat(4, 1fr);
-   justify-items: center;
-}
-
-@media (max-width: 999px) {
-   .layout--stretch-justify,
-   .layout--start-justify,
-   .layout--end-justify,
-   .layout--center-justify {
-      grid-template: repeat(3, 50px) / repeat(4, minmax(70px, 150px));
-   }
-}
-/*======================*/
-
-.layout--stretch-align {
-   grid-template: repeat(3, 80px) / repeat(4, 1fr);
-   /* align-items: stretch; */
-}
-.layout--start-align {
-   grid-template: repeat(3, 80px) / repeat(4, 1fr);
-   align-items: start;
-}
-.layout--end-align {
-   grid-template: repeat(3, 80px) / repeat(4, 1fr);
-   align-items: end;
-}
-.layout--center-align {
-   grid-template: repeat(3, 80px) / repeat(4, 1fr);
-   align-items: center;
-}
-
-
-@media (max-width: 999px) {
-
+@media (max-width: 465px) {
    .layout--align-start,
    .layout--align-end,
    .layout--align-center,
@@ -326,7 +294,86 @@ body {
    .layout--align-space-between,
    .layout--align-space-evenly {
       height: 300px;
-      grid-template: repeat(3, 50px) / repeat(4, minmax(70px, 100px));
+      grid-template: repeat(3, 50px) / repeat(3, 60px);
+   }
+}
+/*============= alignment-content ===================*/
+
+.layout--stretch-justify {
+   grid-template: repeat(3, 80px) / repeat(3, 1fr);
+   /* justify-items: stretch; */
+}
+.layout--start-justify {
+   grid-template: repeat(3, 80px) / repeat(3, 1fr);
+   justify-items: start;
+}
+.layout--end-justify {
+   grid-template: repeat(3, 80px) / repeat(3, 1fr);
+   justify-items: end;
+}
+.layout--center-justify {
+   grid-template: repeat(3, 80px) / repeat(3, 1fr);
+   justify-items: center;
+}
+
+@media (max-width: 999px) {
+   .layout--stretch-justify,
+   .layout--start-justify,
+   .layout--end-justify,
+   .layout--center-justify {
+      grid-template: repeat(3, 50px) / repeat(3, minmax(70px, 150px));
+   }
+}
+@media (max-width: 465px) {
+   .layout--stretch-justify,
+   .layout--start-justify,
+   .layout--end-justify,
+   .layout--center-justify {
+      grid-template: repeat(3, 70px) / repeat(3, 80px);
+   }
+}
+/*======================*/
+
+.layout--stretch-align {
+   grid-template: repeat(3, 80px) / repeat(3, 1fr);
+   /* align-items: stretch; */
+}
+.layout--start-align {
+   grid-template: repeat(3, 80px) / repeat(3, 1fr);
+   align-items: start;
+}
+.layout--end-align {
+   grid-template: repeat(3, 80px) / repeat(3, 1fr);
+   align-items: end;
+}
+.layout--center-align {
+   grid-template: repeat(3, 80px) / repeat(3, 1fr);
+   align-items: center;
+}
+
+
+@media (max-width: 999px) {
+   .layout--align-start,
+   .layout--align-end,
+   .layout--align-center,
+   .layout--align-stretch,
+   .layout--align-space-around,
+   .layout--align-space-between,
+   .layout--align-space-evenly {
+      height: 300px;
+      grid-template: repeat(3, 50px) / repeat(3, minmax(70px, 100px));
+   }
+}
+@media (max-width: 465px) {
+   .layout--align-start,
+   .layout--align-end,
+   .layout--align-center,
+   .layout--align-stretch,
+   .layout--align-space-around,
+   .layout--align-space-between,
+   .layout--align-space-evenly {
+      height: 300px;
+      grid-template: repeat(3, 50px) / repeat(3, 60px);
    }
 }
 
@@ -388,6 +435,12 @@ body {
    .layout--start-end {
       grid-template: repeat(4, 60px) / repeat(4, 1fr);
       grid-auto-rows: 60px;
+   }
+}
+@media (max-width: 465px) {
+   .layout--start-end {
+      grid-template: repeat(4, 50px) / repeat(4, 1fr);
+      grid-auto-rows: 50px;
    }
 }
 /*=================*/
