@@ -54,6 +54,11 @@ body {
 
 /*======================= menu =====================================*/
 
+.page {}
+.page__grid {}
+.grid-page {}
+.grid-page__container {
+}
 .grid-page__menu {
    position: fixed;
    min-width: 270px;
@@ -74,13 +79,12 @@ body {
    line-height: 1.2;
    padding: 0px 0px 0px 25px;
 }
-.menu__link {
-   transition: all 0.3s ease 0s;
-}
+
+.menu__link {}
+
 .menu__sublink {
    display: inline-flex;
    column-gap: 10px;
-   transition: all 0.3s ease 0s;
 }
 .menu__sublink::before {
    content: "";
@@ -92,7 +96,6 @@ body {
    top: 7px;
    left: 0;
    background: #fff;
-   transition: all 0.3s ease 0s;
 }
 
 .grid-page__content {
@@ -503,47 +506,4 @@ body {
 }
 .layout__item--element-9 {
    place-self: end start;
-}
-
-/*========================= figma ===========================*/
-
-.grid-content__figma {
-   display: inline-block;
-   font-size: 20px;
-   font-weight: 700;
-   position: relative;
-}
-.grid-content__link::before {
-   position: absolute;
-   content: "";
-   width: 100%;
-   height: 2px;
-   left: 0;
-   bottom: -5px;
-   background-color: #999;
-}
-.grid-content__link::after {
-   position: absolute;
-   content: "";
-   width: 0;
-   height: 2px;
-   left: 0;
-   bottom: -5px;
-   background-color: #000;
-   transition: width 0.3s ease 0s;
-}
-
-@media (any-hover: hover) {
-   .grid-content__link:hover:after {
-      width: 100%;
-   }
-   .menu__link:hover,
-   .menu__sublink:hover {
-      color: #6398c3;
-      text-decoration: underline;
-   }
-   .menu__sublink:hover:before {
-      background: #6398c3;
-      transform: scale(1.5);
-   }
 }
