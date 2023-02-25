@@ -63,19 +63,24 @@ body {
 }
 
 .menu__list {
+   counter-reset: item;
    line-height: 1.2;
    padding: 0px 0px 0px 40px;
 }
+.menu__link::before {
+   counter-increment: item;
+   content: counter(item) ".";
+}
 .menu__item:not(:last-child) {
    margin: 0px 0px 10px 0px;
+}
+.menu__link {
+   transition: all 0.3s ease 0s;
 }
 .menu__sublist {
    font-style: italic;
    line-height: 1.2;
    padding: 0px 0px 0px 25px;
-}
-.menu__link {
-   transition: all 0.3s ease 0s;
 }
 .menu__sublink {
    display: inline-flex;
@@ -540,7 +545,6 @@ body {
    .menu__link:hover,
    .menu__sublink:hover {
       color: #6398c3;
-      text-decoration: underline;
    }
    .menu__sublink:hover:before {
       background: #6398c3;
