@@ -60,7 +60,7 @@
    line-height: 1.25;
    text-indent: 20px;
 }
-span {
+.text span {
    font-weight: 700;
    background-color: #fff;
    border-radius: 5px;
@@ -129,4 +129,74 @@ span {
    .layout__item {
       font-size: 14px;
    }
+}
+
+/*==================== figma ===========================*/
+
+/*====== задний фон ======*/
+
+.background {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+}
+
+.background__item {
+   position: absolute;
+}
+
+/*====== оранжевая кнопка =====*/
+
+.button {
+   display: inline-block;
+   font-weight: 700;
+   line-height: 1.25;
+   text-align: center;
+   letter-spacing: 0.5px;
+   color: #FFFFFF;
+   background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
+   border-radius: 4px;
+   padding: 16px 40px;
+   position: relative;
+}
+
+.button span {
+   position: relative;
+   z-index: 2;
+}
+
+.button::before {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   background: linear-gradient(55.95deg, #e7352f 0%, #e25604 100%);
+   border-radius: 4px;
+   opacity: 0;
+   transition: all 0.3s ease 0s;
+}
+
+.button:hover::before {
+   opacity: 1;
+}
+
+/*====== прозрачная кнопка ======*/
+
+.button--border {
+   color: #FF3F3A;
+   background: transparent;
+   border: 1px solid #FF3F3A;
+   border-radius: 4px;
+   padding: 15px 40px;
+   transition: all 0.3s ease 0s;
+}
+
+.button--border:hover {
+   color: #fff;
+   border: 1px solid #FF3F3A;
+   background-color: #FF3F3A;
 }
